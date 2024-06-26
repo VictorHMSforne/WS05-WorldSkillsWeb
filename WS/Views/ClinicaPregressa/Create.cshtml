@@ -1,0 +1,88 @@
+﻿@model WS.Models.ClinicaPregressa
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>ClinicaPregressa</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="DoencasInfecciosas" class="control-label">Doenças Infecciosas?</label>
+                <div>
+                    <label>
+                        @Html.RadioButtonFor(model => model.DoencasInfecciosas, "Sim") Sim
+                    </label>
+                </div> 
+                <label>
+                    @Html.RadioButtonFor(model => model.DoencasInfecciosas, "Nao") Não
+                </label>
+          
+                <input asp-for="DoencasInfecciosas" class="form-control" placeholder="Se sim Quais?" />
+                <span asp-validation-for="DoencasInfecciosas" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Alergias" class="control-label"></label>
+                <label>
+                    @Html.RadioButtonFor(model => model.Alergias, "Sim") Sim
+                </label>
+                <label>
+                    @Html.RadioButtonFor(model => model.Alergias, "Nao") Não
+                </label>
+                <input asp-for="Alergias" class="form-control" placeholder="Se sim Quais?" />
+                <span asp-validation-for="Alergias" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cirurgias" class="control-label"></label>
+                <label>
+                    @Html.RadioButtonFor(model => model.Cirurgias, "Sim") Sim
+                </label>
+                <label>
+                    @Html.RadioButtonFor(model => model.Cirurgias, "Nao") Não
+                </label>
+                <input asp-for="Cirurgias" class="form-control" placeholder="Se sim Quais?" />
+                <span asp-validation-for="Cirurgias" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TransfusaoSangue" class="control-label"></label>
+                <label>
+                    @Html.RadioButtonFor(model => model.TransfusaoSangue, "Sim") Sim
+                </label>
+                <label>
+                    @Html.RadioButtonFor(model => model.TransfusaoSangue, "Nao") Não
+                </label>
+                <input asp-for="TransfusaoSangue" class="form-control" placeholder="Se sim Quais?" />
+                <span asp-validation-for="TransfusaoSangue" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MedicamentosContinuo" class="control-label"></label>
+                <label>
+                    @Html.RadioButtonFor(model => model.MedicamentosContinuo, "Sim") Sim
+                </label>
+                <label>
+                    @Html.RadioButtonFor(model => model.MedicamentosContinuo, "Nao") Não
+                </label>
+                <input asp-for="MedicamentosContinuo" class="form-control" placeholder="Se sim Quais?" />
+                <span asp-validation-for="MedicamentosContinuo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Outros" class="control-label"></label>
+                <input asp-for="Outros" class="form-control"  />
+                <span asp-validation-for="Outros" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

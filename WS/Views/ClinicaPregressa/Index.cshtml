@@ -1,0 +1,65 @@
+﻿@model IEnumerable<WS.Models.ClinicaPregressa>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DoencasInfecciosas)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Alergias)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cirurgias)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TransfusaoSangue)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MedicamentosContinuo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Outros)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DoencasInfecciosas)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Alergias)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cirurgias)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TransfusaoSangue)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MedicamentosContinuo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Outros)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.MyProperty">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.MyProperty">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.MyProperty">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

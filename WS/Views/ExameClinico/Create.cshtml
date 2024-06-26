@@ -1,0 +1,75 @@
+﻿@model WS.Models.ExameClinico
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Exame Clínico-Ocupacional</h1>
+
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div>
+                <label>
+                    @Html.RadioButtonFor(model => model.Ocupacao , "Admissional") Admissional
+                </label>
+            </div>
+            <div>
+                <label>
+                    @Html.RadioButtonFor(model => model.Ocupacao , "Mudança de Função") Mudança de Função
+                </label>
+            </div>
+            <div>
+                <label>
+                    @Html.RadioButtonFor(model => model.Ocupacao , "Demissional") Demissional
+                </label>
+            </div>
+            <div>
+                <label>
+                    @Html.RadioButtonFor(model => model.Ocupacao , "Periódico") Periódico
+                </label>
+            </div>
+            <div>
+                <label>
+                    @Html.RadioButtonFor(model => model.Ocupacao , "Retorno ao Trabalho") Retorno ao Trabalho
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="Nome" class="control-label"></label>
+                <input asp-for="Nome" class="form-control" />
+                <span asp-validation-for="Nome" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Idade" class="control-label"></label>
+                <input asp-for="Idade" class="form-control" />
+                <span asp-validation-for="Idade" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RG" class="control-label"></label>
+                <input asp-for="RG" class="form-control" />
+                <span asp-validation-for="RG" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Funcao" class="control-label"></label>
+                <input asp-for="Funcao" class="form-control" />
+                <span asp-validation-for="Funcao" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Empresa" class="control-label"></label>
+                <input asp-for="Empresa" class="form-control" />
+                <span asp-validation-for="Empresa" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
